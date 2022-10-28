@@ -1,0 +1,269 @@
+# Praktika
+
+## Sissejuhatus
+
+Praktilise osa ilma analüüsita teostasin koos Kristo Markus Soikaga.
+
+## Elektromotoorjõud ja sisetakistus
+
+Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonisel \@ref(fig:ampermeter-front) leheküljel $\pageref{fig:ampermeter-front}$), teise pinge (joonisel \@ref(fig:voltmeter-front) leheküljel $\pageref{fig:voltmeter-front}$) mõõtmiseks ja skaalata reostaadi (külgvaatega joonisel \@ref(fig:rheostat-side) leheküljel $\pageref{fig:rheostat-side}$ vastavalt skeemile joonisel \@ref(fig:schema). Läbipõlemise vältimiseks paigutasime reostaadi nihuti keskele, kuna meile polnud teada, kumba otsa nihutatuna oleks tegemist minimaalse ja kumba maksimaalse takistusega. Juhendis oli küll kirjas, et kahe klemmiga otsas on takistus maksimaalne, ent kindlam on ise järele kontrollida. Lahtiühendatud maandusklemmiga lülitasime vooluallika (joonis \@ref(fig:dc-source-front) leheküljel $\pageref{fig:dc-source-front}$) sisse, seadistasime kümne voldi peale (joonis \@ref(fig:output-10-v-open) leheküljel $\pageref{fig:output-10-v-open}$), lülitasime vooluallika välja, ühendasime maandusklemmi külge tagasi, lülitasime vooluallika sisse (joonis \@ref(fig:output-10-v-closed) leheküljel $\pageref{fig:output-10-v-closed}$).
+
+```{=latex}
+\begin{figure}
+\begin{circuitikz}[european]
+	\draw
+	(0, 0)	to[dcvsource, l = $E$, v_ = $r$] (0, 2)
+			to[ammeter] (2, 2)
+			to[vR, l = $R$, *-*] (2, 0) -- (0, 0);
+	\draw
+		(2, 2)	to[voltmeter] (4, 2) -- (4, 0) -- (2, 0)
+	;
+\end{circuitikz}
+  \caption{Skeem, mille järgi toimetasime.} \label{fig:schema} 
+\end{figure}
+
+```
+
+```{r label = "output-10-v-open", fig.cap = "Seadistasime alalisvooluallika kümne voldi peale. Näeme, et voolu pole, sest miinusklemm on lahti ühendatud."}
+include_external_graphics("rmd/10-v-lahti.jpg")
+
+```
+
+```{r label = "output-10-v-closed", fig.cap = "Peale negatiivse klemmi ühendamist on näha ka voolutugevus, ent ebaselge on, kas seda tuleb lugeda alumiselt või ülemiselt skaalalt ning seadme kasutusjuhendis pole selle kohta üldse mitte midagi mainitud. Vastuse sellele küsimusele saame, kui viskame pilgu joonisele \\@ref(fig:output-10-v-closed-scale) leheküljel $\\pageref{fig:output-10-v-closed-scale}$."}
+include_external_graphics("rmd/10-v-kinni.jpg")
+
+```
+
+```{r label = "output-10-v-closed-scale", fig.cap = "Ampermeetrilt näeme, et kasutada tuleb alalisvooluallika ülemist skaalat."}
+include_external_graphics("rmd/10-v-closed-scale.png")
+
+```
+
+Reostaadil on leheküljel $\pageref{fig:output-10-v-closed-scale}$ oleva joonise \@ref(fig:output-10-v-closed-scale) järgi paremal küljel klemm nii üleval kui all. Oluline oli ühendada voltmeeter ülemisse klemmi, millelt avaldub takistus, mida me muudame, sest:
+
+> All on konstantne. Siis ma... Midagi läheb sealt läbi, aga siis peab mõtlema, mis, mis kurat sealt läbi läheb.
+
+`r tufte::quote_footer('--- Tõnu Laas')`
+
+Hakkasime mõõtma elektrivoolu ja pinget eri takistuste korral, mida muutsime reostaadiga nihutades iga järgmise sammu jaoks reostaadi liugurit. Tulemused kandsin tabelisse \@ref(tab:current-characteristics-1) leheküljel $\pageref{tab:current-characteristics-1}$.
+
+```{r label = "current-characteristics-1"}
+I_1 <- c(.11, 0.13, .14, .16, .19, .21, .26) # A
+U_1 <- c(7.78, 7.36, 7.02, 6.68, 6.18, 5.79, 4.66) # V
+
+current_characteristics_1 <- data.frame(I = I_1, U = U_1)
+
+colnames(current_characteristics_1) <- c(
+  "$\\frac{I_1}{\\mathrm{A}}$",
+  "$\\frac{U_1}{\\mathrm{V}}$"
+)
+
+print_table(
+  table = current_characteristics_1,
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused alalisvooluallika voltmeetri näidul kümme volti."
+)
+
+```
+
+Järgnevalt sättisime alalisvooluallika pinge 12 voldi peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-2) leheküljel $\pageref{tab:current-characteristics-2}$:
+
+```{r label = "current-characteristics-2"}
+I_2 <- c(.14, .16, .17, .18, .21, .24, .29)
+U_2 <- c(8.11, 7.74, 7.42, 7.3, 6.69, 6.01, 5.05)
+
+current_characteristics_2 <- data.frame(I = I_2, U = U_2)
+
+colnames(current_characteristics_2) <- c(
+  "$\\frac{I_2}{\\mathrm{A}}$",
+  "$\\frac{U_2}{\\mathrm{V}}$"
+)
+
+print_table(
+  table = current_characteristics_2,
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul 12 volti."
+)
+
+```
+
+Järgnevalt sättisime alalisvooluallika pinge 14 voldi peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-3) leheküljel $\pageref{tab:current-characteristics-3}$:
+
+```{r label = "current-characteristics-3"}
+I_3 <- c(.15, .17, .19, .23, .26, .28, .32)
+U_3 <- c(8.83, 8.48, 8.08, 7.36, 6.75, 6.3, 5.4)
+
+current_characteristics_3 <- data.frame(I_3 = I_3, U_3 = U_3)
+
+colnames(current_characteristics_3) <- c(
+  "$\\frac{I_3}{\\mathrm{A}}$",
+  "$\\frac{U_3}{\\mathrm{V}}$"
+)
+
+print_table(
+  table = current_characteristics_3,
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul 14 volti."
+)
+
+```
+
+Leheküljel $\pageref{fig:U-I}$ oleval joonisel \@ref(fig:U-I) on näha graafiliselt, kuidas reostaadi otste vahel olev pinge sõltub voolutugevusest alalisvooluallika kolme eri väljundpinge korral.
+
+```{r label = "U-I", fig.cap="Reostaadi otste vahel olev pinge ja voolutugevus sõltuvalt alalisvooluallika väljundpingest."}
+librarian::shelf(c(                                                                           # 1
+  "ggplot2",                                                                                  # 2
+  "ggpmisc",
+  "ggpubr",
+  "latex2exp"                                                                                 # 3
+))                                                                                            # 4
+
+colnames(current_characteristics_1) <- c(
+  "I_1",
+  "U_1"
+)
+
+colnames(current_characteristics_2) <- c(
+  "I_2",
+  "U_2"
+)
+
+colnames(current_characteristics_3) <- c(
+  "I_3",
+  "U_3"
+)
+
+formula_1 = U_1 ~ I_1
+model_1 = lm(formula = formula_1, data = current_characteristics_1)
+emf_1 <- model_1$coefficients[1]
+r_1 <- -model_1$coefficients[2]
+
+formula_2 = U_2 ~ I_2
+model_2 = lm(formula = formula_2, data = current_characteristics_2)
+emf_2 <- model_2$coefficients[1]
+r_2 <- -model_2$coefficients[2]
+
+formula_3 = U_3 ~ I_3
+model_3 = lm(formula = formula_3, data = current_characteristics_3)
+emf_3 <- model_3$coefficients[1]
+r_3 <- -model_3$coefficients[2]
+
+ggplot(data = current_characteristics_1) + geom_point(aes(x = I_1, y = U_1, colour = "10")) +                         # 6
+  labs(x = TeX("$\\frac{\\textit{I}}{A}$"), y = TeX("$\\frac{\\textit{U}}{V}$")) +
+  geom_point(data = current_characteristics_2, aes(x = I_2, y = U_2, colour = "12")) +
+  geom_point(data = current_characteristics_3, aes(x = I_3, y = U_3, colour = "14")) +
+  guides(color = guide_legend(title = "Alalisvooluallika väljundpinge")) +
+  scale_color_discrete(labels = unname(TeX(c("$10 \\cdot V$", "$12 \\cdot V$", "$14 \\cdot V$")))) +
+  stat_regline_equation(mapping = aes(x = I_1, y = U_1, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "10"), label.y = 5) +
+  stat_regline_equation(aes(x = I_2, y = U_2, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "12"), label.y = 5.5) +
+  stat_regline_equation(aes(x = I_3, y = U_3, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "14"), label.x = .16, label.y = 8.6) +
+  stat_cor(aes(x = I_1, y = U_1, colour = "10"), label.y = 4.5) +
+  stat_cor(aes(x = I_2, y = U_2, colour = "12"), label.y = 6) +
+  stat_cor(aes(x = I_3, y = U_3, colour = "14"), label.x = .2, label.y = 8)
+
+```
+
+Sama elektromotoorjõu ja alalisvooluallika sisetakistuse korral teostatud eri takistustega elektrivoolu ja pinge mõõtmiste põhjal saab need samaks jäävad ehk konstantsed väärtused välja arvutada kasutades regressioonanalüüsi, sest välja paistab tugev oluline negatiivne seos ($R$ on igal kolmel tasemel väärtusega -1 ja $p \ll .05$) igal kolmel tasemel pinge ja elektrivoolu vahel. Lasin regressioonanalüüsi teostada automaatselt. Kui eeldada, et seosed kehtivad kõikvõimalike elektrivoolu ja pinge väärtuste korral, siis elektrivoolu puudumisel oleva väärtuse leiame joonisele märgitud võrrandite vabaliikmetest ja alalisvooluallika sisetakistuse nendesamade võrrandite ühe muutujaga üksliikmete kordajate vastandarvudest kasutades valemit \@ref(eq:V-klemm). 
+
+Kuigi juhendis on kirjas, et kui kõik hästi läks, siis pidanuks elektromotoorjõud võrduma pingega vooluallika otstel lahtise vooluringe korral, kuid nii on see ainult kümnevoldise väljundpinge korral. Muudes juhtudes oli elektromotoorjõud väljundpingest väiksem. Järelikult mängis suurema väljundpinge korral rolli ühenduskohtade või juhtmete takistus või näitas osuti valesti.
+
+## Vooluallika kasutegur
+
+Järgnevalt selgitasime välja vooluallika kasuteguri. Selleks sättisime alalisvooluallika väljundpinge taas kümnevoldiseks ning ühendasime vastavalt skeemile \@ref(fig:schema-with-additional-resistor) vooluringi lisatakisti (joonis \@ref(fig:with-r-l) leheküljel $\pageref{fig:with-r-l}$). Selgus, et kümnevoldise väljundpinge korral on elektromotoorjõud $`r signif(emf_1, digits = 3)` \times V$ ja sisetakistus $`r signif(r_1, digits = 3)` \times \Omega$.
+
+```{=tex}
+\begin{figure}
+\begin{circuitikz}[european]
+	\draw
+	(0, 0)	to[dcvsource, l = $E$, v_ = $r$] (0, 2)
+			to[ammeter] (2, 2)
+			to[vR, l = $R$, *-*] (2, 0)
+			to[R, l = $r_L$] (0, 0)
+	;
+	\draw
+		(2, 2)	to[voltmeter] (4, 2) -- (4, 0) -- (2, 0)
+	;
+\end{circuitikz}
+  \caption{Lisatakistiga skeem.} \label{fig:schema-with-additional-resistor}
+\end{figure}
+
+```
+
+
+```{r label = "with-r-l", fig.cap = "Vooluring lisatakistiga."}
+include_external_graphics("rmd/vooluring-lisatakistiga.png")
+
+```
+
+Jätkasime voolutugevuse ja reostaadi otstevahelise pinge mõõtmist lisatakistusega ning kandsime tulemused tabelisse \@ref(tab:eta-power) leheküljel $\pageref{tab:eta-power}$.
+
+```{r label = "eta-power"}
+
+index <- seq(1, 10)
+I <- c(.05, .06, .07, .08, .08, .09, .1, .11, .12, .12)
+U <- c(7.4, 7.25, 6.9, 6.51, 6.25, 5.98, 5.81, 5.33, 4.9, 4.75)
+N_1 <- I * U
+N <- I * emf_1
+eta <- N_1 / N
+eta_only_voltages <- U / emf_1
+emf_1_less_U <- emf_1 - U
+R <- U / I
+r_s <- r_1 + 20
+R_over_r_s <- R / r_s
+U_over_emf_1_less_U <- U / emf_1_less_U
+
+eta_power <- data.frame(index = index, I = I, U = U, N_1 = N_1, N = N, eta = eta, eta_only_voltages = eta_only_voltages, emf_1_less_U = emf_1_less_U, R = R, R_over_r_s = R_over_r_s, U_over_emf_1_less_U = U_over_emf_1_less_U)
+
+colnames(eta_power) <- c(
+  "Katse",
+  "$\\frac{I}{\\mathrm{A}}$",
+  "$\\frac{U}{\\mathrm{V}}$",
+  "$\\frac{P_1}{\\mathrm{W}}$",
+  "$\\frac{P}{\\mathrm{W}}$",
+  "$\\eta_P$",
+  "$\\eta_U$",
+  "$\\frac{\\epsilon - U}{\\mathrm{V}}$",
+  "$\\frac{R}{\\Omega}$",
+  "$\\frac{R}{r_s}$",
+  "$\\frac{U}{\\epsilon - U}$"
+)
+
+print_table(
+  table = eta_power,
+  caption = "Andmed vooluallika kasuteguri ja võimsuse leidmiseks."
+)
+```
+
+Kasulik võimsus on see töö, mis tehakse ajas väljaspool vooluallikat vastavalt valemile \@ref(eq:P) leheküljel $\pageref{eq:P}$. Sama valemi järgi saab arvutada koguvõimsust - tuleb ainult pinge asendada elektromotoorjõuga. Kui lahutada elektromotoorjõust pinge alalisvooluallika positiivse väljundi ja pimereostaadi väikese takistuse otsa klemmi vahel, saame sisepinge. Selle reostaadi takistuse saame arvutada valemi \@ref(eq:R) põhjal leheküljel $\pageref{eq:R}$. Sisemine elektritakistus on nüüd alalisvooluallika sisetakistuse ja lisatud takisti takistuse summa. Kuna vastavalt Ohmi seadusele (valem \@ref(eq:R)) on pinge ja takistus samas valemis ja üksteise suhtes võrdelises sõltuvuses ja voolutugevus on konstantne nii sees kui väljas, peaksid sisemise ja välimise takistuse ning sisemise ja välimise pinge suhted olema võrdsed.
+
+Joonisel \@ref(fig:eta-power-graph) on esitatud võimsuse ja kasuteguri sõltuvus voolutugevusest.
+
+```{r label = "eta-power-graph", fig.cap= "Võimsuse ja kasuteguri sõltuvus voolutugevusest."}
+I_margin <- 1 / 100 * I + 2 / 100
+U_margin <- .8 / 100 * U + 2 / 100
+N_1_margin <- sqrt(I_margin^2 + U_margin^2)
+emf_margin <- sqrt(U_margin^2 + r_1^2 * I_margin^2)
+eta_margin <- sqrt(U_margin^2 + emf_margin^2)
+
+ggplot(data = eta_power) + geom_point(aes(x = I, y = N_1, colour = "N_1")) +                         # 6
+  labs(x = TeX("$\\frac{\\textit{I}}{A}$"), y = TeX("$\\frac{\\textit{N}_1}{W}$")) +
+  geom_point(data = eta_power, aes(x = I, y = eta, colour = "eta_N")) +
+  scale_y_continuous(sec.axis = sec_axis(~., name = TeX("\\eta"))) +
+  guides(color = guide_legend(title = "")) +
+  scale_color_discrete(labels = unname(TeX(c("$\\frac{\\textit{N}_1}{W}$", "$\\textit{eta}$")))) +
+  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = N_1, colour = "N_1")) +
+  geom_errorbar(aes(x = I, ymin = N_1 - N_1_margin, ymax = N_1 + N_1_margin, colour = "N_1")) +
+  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = eta, colour = "eta_N")) +
+  geom_errorbar(aes(x = I, ymin = eta - eta_margin, ymax = eta + eta_margin, colour = "eta_N"))
+
+```
+
+```{r label = "eta-power-resistancy-graph", fig.cap= "Võimsuse ja kasuteguri sõltuvus välis- ja sisetakistuse suhtest."}
+
+ggplot(data = eta_power) + geom_point(aes(x = R_over_r_s, y = N_1, colour = "N_1")) +                         # 6
+  labs(x = TeX("$\\textit{\\frac{R}{r_s}}$"), y = TeX("$\\frac{\\textit{N}_1}{W}$")) +
+  geom_point(data = eta_power, aes(x = R_over_r_s, y = eta, colour = "eta_N")) +
+  scale_y_continuous(sec.axis = sec_axis(~., name = TeX("\\eta"))) +
+  guides(color = guide_legend(title = "")) +
+  scale_color_discrete(labels = unname(TeX(c("$\\frac{\\textit{N}_1}{W}$", "$\\textit{eta}$"))))
+
+```
+
+

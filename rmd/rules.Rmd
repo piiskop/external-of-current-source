@@ -1,0 +1,243 @@
+# Reeglid
+
+## Asukoha vektor
+
+```{=tex}
+\begin{align}
+\vec{r} := x \cdot \vec{i} + y \cdot \vec{j} + z \cdot \vec{k},
+(\#eq:r)
+\end{align}
+```
+
+kus $x$, $y$ ja $z$ on Descartes'i ruumi koordinaadid `r render_with_emojis("((ref:haynes-2014-crc), p. 2-1)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{L},
+(\#eq:dimensional-analysis-for-r)
+\end{align}
+```
+
+mistõttu ühik on $m$.
+
+
+## Kiiruse vektor
+
+```{=tex}
+\begin{align}
+\vec{v} := \frac{\mathrm{d}(\vec{r})}{\mathrm{d}(t)},
+(\#eq:v)
+\end{align}
+```
+
+kus $\vec{r}$ on asukoha vektor ja *t* on kestus `r render_with_emojis("((ref:haynes-2014-crc), p. 2-1)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L}{T}},
+(\#eq:dimensional-analysis-for-v)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m}{s}$.
+
+
+## Kiirenduse vektor
+
+```{=tex}
+\begin{align}
+\vec{a} := \frac{\mathrm{d}(\vec{v})}{\mathrm{d}(t)},
+(\#eq:a)
+\end{align}
+```
+
+kus $\vec{v}$ on kiiruse vektor ja *t* on kestus `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L}{T}}{T} = \frac{L}{T^2}},
+(\#eq:dimensional-analysis-for-a)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m}{s^2}$.
+
+## Jõud
+
+```{=tex}
+\begin{align}
+\vec{F} := m \cdot \vec{a},
+(\#eq:force)
+\end{align}
+```
+
+kus *m* on mass ja $\vec{a}$ on kiirenduse vektor `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{M \cdot \frac{L}{T^2} = \frac{L \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-force)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m \cdot kg}{s^2}$ või lühemalt $N$.
+
+## Elektromotoorjõud
+
+```{=latex}
+\begin{align}
+E := \int{\frac{\vec{F}}{Q}} \cdot \mathrm{d}(s),(\#eq:emf) 
+\end{align}
+
+```
+
+milles *Q* on elektrilaeng `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")` ja $s$ on tee pikkus `r render_with_emojis("((ref:haynes-2014-crc), p. 2-1)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L \cdot M}{T^2}}{I \cdot T} \cdot L = \frac{L^2 \cdot M}{I \cdot T^3}}
+(\#eq:dimensional-analysis-for-emf)
+\end{align}
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-49; (ref:newell-sp), p. 31)")`, mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või lihtsamalt $\frac{m^2 \cdot kg}{C \cdot s^2}$ või lühemalt $\frac{m \cdot N}{C}$ või veel lühemalt $\frac{J}{C}$ või kõige lühemalt $V$ `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`.
+
+## Elektrivool
+
+```{=latex}
+\begin{align}
+I := \frac{\mathrm{d}(Q)}{\mathrm{d}(t)},(\#eq:I) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-3)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{I \cdot T}{T} = I},
+(\#eq:dimensional-analysis-for-I)
+\end{align}
+```
+
+mistõttu ühik on $A$.
+
+## Töö
+
+```{=latex}
+\begin{align}
+W := \int{\vec{F}} \cdot \mathrm{d}(s)(\#eq:W) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L \cdot M}{T^2} \cdot L = \frac{L^2 \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-W)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^2}$ või lühemalt $m \cdot N$ või kõige lühemalt $J$.
+
+## Elektriline potentsiaal
+
+```{=latex}
+\begin{align}
+V := \frac{\mathrm{d}(W)}{\mathrm{d}(Q)},(\#eq:V) 
+\end{align}
+
+```
+
+milles $W$ on töö `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^2}}{I \cdot T} = \frac{L^2 \cdot M}{T^2 \cdot I \cdot T} = \frac{L^2 \cdot M}{T^3 \cdot I}},
+(\#eq:dimensional-analysis-for-V)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või kõige lühemalt $V$.
+
+## Elektripotentsiaalide erinevus
+
+```{=latex}
+\begin{align}
+U := V_2 - V_1,(\#eq:U) 
+\end{align}
+
+```
+
+milles $V_1$ ja $V_2$ on elektrilised potentsiaalid `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{T^3 \cdot I}},
+(\#eq:dimensional-analysis-for-U)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või kõige lühemalt $V$.
+
+## Elektritakistus
+
+```{=latex}
+\begin{align}
+R := \frac{U}{I},(\#eq:R) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-3)")`, milles *U* on elektripotentsiaalide erinevus `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^3 \cdot I}}{I} = \frac{L^2 \cdot M}{T^3 \cdot I^2}},
+(\#eq:dimensional-analysis-for-R)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{A^2 \cdot s^3}$ või lühemalt $A \cdot V$ või kõige lühemalt $\Omega$.
+
+## Terminali elektripotentsiaalide erinevus
+
+```{=latex}
+\begin{align}
+U_\mathrm{klemm} := E - I \cdot R_\mathrm{sisemine},(\#eq:V-klemm) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-1)")`, milles *I* on elektrivool ja $R_\mathrm{sisemine}$ on sisemine elektritakistus `r render_with_emojis("((ref:haynes-2014-crc), p. 2-3)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{I \cdot T^3}},
+(\#eq:dimensional-analysis-for-V-klemm)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või kõige lühemalt $V$.
+
+## Elektri energia
+
+```{=latex}
+\begin{align}
+P := U \cdot I (\#eq:P) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^3}$ või lühemalt $\frac{m \cdot N}{s}$ või kõige lühemalt $W$.
