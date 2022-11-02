@@ -5,6 +5,12 @@
 \hyphenpenalty=10000
 \fontspec{Symbola}
 
+(ref:a3) @a3
+
+(ref:cleverlysmartcom-2022-physics) @cleverlysmartcom_2022_physics
+
 (ref:haynes-2014-crc) @haynes_2014_crc
 
 (ref:newell-sp) @newell_sp
+
+(ref:unit) @unit

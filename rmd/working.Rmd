@@ -1,12 +1,12 @@
 # Praktika
 
-## Sissejuhatus
+## Teostajad
 
 Praktilise osa ilma analüüsita teostasin koos Kristo Markus Soikaga.
 
 ## Elektromotoorjõud ja sisetakistus
 
-Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonisel \@ref(fig:ampermeter-front) leheküljel $\pageref{fig:ampermeter-front}$), teise pinge (joonisel \@ref(fig:voltmeter-front) leheküljel $\pageref{fig:voltmeter-front}$) mõõtmiseks ja skaalata reostaadi (külgvaatega joonisel \@ref(fig:rheostat-side) leheküljel $\pageref{fig:rheostat-side}$ vastavalt skeemile joonisel \@ref(fig:schema). Läbipõlemise vältimiseks paigutasime reostaadi nihuti keskele, kuna meile polnud teada, kumba otsa nihutatuna oleks tegemist minimaalse ja kumba maksimaalse takistusega. Juhendis oli küll kirjas, et kahe klemmiga otsas on takistus maksimaalne, ent kindlam on ise järele kontrollida. Lahtiühendatud maandusklemmiga lülitasime vooluallika (joonis \@ref(fig:dc-source-front) leheküljel $\pageref{fig:dc-source-front}$) sisse, seadistasime kümne voldi peale (joonis \@ref(fig:output-10-v-open) leheküljel $\pageref{fig:output-10-v-open}$), lülitasime vooluallika välja, ühendasime maandusklemmi külge tagasi, lülitasime vooluallika sisse (joonis \@ref(fig:output-10-v-closed) leheküljel $\pageref{fig:output-10-v-closed}$).
+Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref("fig:ampermeter-front")`), teise pinge (joonisel \@ref(fig:voltmeter-front) leheküljel`r render_pageref("fig:voltmeter-front")`) mõõtmiseks ja skaalata reostaadi (külgvaatega joonisel \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")`) vastavalt skeemile joonisel \@ref(fig:schema) leheküljel`r render_pageref("fig:schema")`. Läbipõlemise vältimiseks paigutasime reostaadi nihuti keskele, kuna meile polnud teada, kumba otsa nihutatuna oleks tegemist minimaalse ja kumba maksimaalse takistusega. Juhendis oli küll kirjas, et kahe klemmiga otsas on takistus maksimaalne, ent kindlam on ise järele kontrollida. Lahtiühendatud maandusklemmiga lülitasime vooluallika (joonis \@ref(fig:dc-source-front) leheküljel`r render_pageref("fig:dc-source-front")`) sisse, seadistasime $\textcolor[HTML]{008000}{10 \cdot V}$ peale (joonis \@ref(fig:output-10-v-open) leheküljel`r render_pageref("fig:output-10-v-open")`), lülitasime vooluallika välja, ühendasime maandusklemmi külge tagasi, lülitasime vooluallika sisse (joonis \@ref(fig:output-10-v-closed) leheküljel`r render_pageref("fig:output-10-v-closed")`).
 
 ```{=latex}
 \begin{figure}
@@ -24,28 +24,45 @@ Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonise
 
 ```
 
-```{r label = "output-10-v-open", fig.cap = "Seadistasime alalisvooluallika kümne voldi peale. Näeme, et voolu pole, sest miinusklemm on lahti ühendatud."}
+```{=latex}
+\onecolumn
+\begin{landscape}
+
+```
+
+```{r label = "output-10-v-open", echo=FALSE, fig.cap = "Seadistasime alalisvooluallika \\textcolor[HTML]{008000}{$10 \\cdot V$} peale. Näeme, et voolu pole, sest miinusklemm on lahti ühendatud."}
 include_external_graphics("rmd/10-v-lahti.jpg")
 
 ```
 
-```{r label = "output-10-v-closed", fig.cap = "Peale negatiivse klemmi ühendamist on näha ka voolutugevus, ent ebaselge on, kas seda tuleb lugeda alumiselt või ülemiselt skaalalt ning seadme kasutusjuhendis pole selle kohta üldse mitte midagi mainitud. Vastuse sellele küsimusele saame, kui viskame pilgu joonisele \\@ref(fig:output-10-v-closed-scale) leheküljel $\\pageref{fig:output-10-v-closed-scale}$."}
+```{r label = "output-10-v-closed", echo=FALSE, fig.cap = paste("Peale negatiivse klemmi ühendamist on näha ka voolutugevus, ent ebaselge on, kas seda tuleb lugeda alumiselt või ülemiselt skaalalt ning seadme kasutusjuhendis pole selle kohta üldse mitte midagi mainitud. Vastuse sellele küsimusele saame, kui viskame pilgu joonisele \\@ref(fig:output-10-v-closed-scale) leheküljel", render_pageref("fig:output-10-v-closed-scale"), ".", sep = "")}
 include_external_graphics("rmd/10-v-kinni.jpg")
 
 ```
 
-```{r label = "output-10-v-closed-scale", fig.cap = "Ampermeetrilt näeme, et kasutada tuleb alalisvooluallika ülemist skaalat."}
+```{r label = "output-10-v-closed-scale", echo=FALSE, fig.cap = "Ampermeetrilt näeme, et kasutada tuleb alalisvooluallika ülemist skaalat.", out.height=".92\\textheight"}
 include_external_graphics("rmd/10-v-closed-scale.png")
 
 ```
 
-Reostaadil on leheküljel $\pageref{fig:output-10-v-closed-scale}$ oleva joonise \@ref(fig:output-10-v-closed-scale) järgi paremal küljel klemm nii üleval kui all. Oluline oli ühendada voltmeeter ülemisse klemmi, millelt avaldub takistus, mida me muudame, sest:
+```{=latex}
+\end{landscape}
+\twocolumn
+
+```
+
+Reostaadil on leheküljel`r render_pageref("fig:output-10-v-closed-scale")` oleva joonise \@ref(fig:output-10-v-closed-scale) järgi paremal küljel klemm nii üleval kui all. Oluline oli ühendada voltmeeter ülemisse klemmi, millelt avaldub takistus, mida me muudame, sest:
 
 > All on konstantne. Siis ma... Midagi läheb sealt läbi, aga siis peab mõtlema, mis, mis kurat sealt läbi läheb.
 
 `r tufte::quote_footer('--- Tõnu Laas')`
 
-Hakkasime mõõtma elektrivoolu ja pinget eri takistuste korral, mida muutsime reostaadiga nihutades iga järgmise sammu jaoks reostaadi liugurit. Tulemused kandsin tabelisse \@ref(tab:current-characteristics-1) leheküljel $\pageref{tab:current-characteristics-1}$.
+Hakkasime mõõtma elektrivoolu ja pinget eri takistuste korral, mida muutsime reostaadiga nihutades iga järgmise sammu jaoks reostaadi liugurit. Tulemused kandsin tabelisse \@ref(tab:current-characteristics-1) leheküljel`r render_pageref("tab:current-characteristics-1")`.
+
+```{=latex}
+\onecolumn
+
+```
 
 ```{r label = "current-characteristics-1"}
 I_1 <- c(.11, 0.13, .14, .16, .19, .21, .26) # A
@@ -60,14 +77,24 @@ colnames(current_characteristics_1) <- c(
 
 print_table(
   table = current_characteristics_1,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused alalisvooluallika voltmeetri näidul kümme volti."
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused alalisvooluallika voltmeetri näidul \\textcolor[HTML]{008000}{$10 \\cdot V$}."
 )
 
 ```
 
-Järgnevalt sättisime alalisvooluallika pinge 12 voldi peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-2) leheküljel $\pageref{tab:current-characteristics-2}$:
+```{=latex}
+\twocolumn
 
-```{r label = "current-characteristics-2"}
+```
+
+Järgnevalt sättisime alalisvooluallika pinge $\textcolor[HTML]{ff6600}{12 \cdot V}$ peale ja kordasime vaatlusi nagu $\textcolor[HTML]{008000}{10 \cdot V}$ korral kandes tulemused tabelisse \@ref(tab:current-characteristics-2) leheküljel`r render_pageref("tab:current-characteristics-2")`.
+
+```{=latex}
+\onecolumn
+
+```
+
+```{r label = "current-characteristics-2", echo=FALSE}
 I_2 <- c(.14, .16, .17, .18, .21, .24, .29)
 U_2 <- c(8.11, 7.74, 7.42, 7.3, 6.69, 6.01, 5.05)
 
@@ -80,14 +107,24 @@ colnames(current_characteristics_2) <- c(
 
 print_table(
   table = current_characteristics_2,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul 12 volti."
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul \\textcolor[HTML]{ff6600}{$12 \\cdot V$}."
 )
 
 ```
 
-Järgnevalt sättisime alalisvooluallika pinge 14 voldi peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-3) leheküljel $\pageref{tab:current-characteristics-3}$:
+```{=latex}
+\twocolumn
 
-```{r label = "current-characteristics-3"}
+```
+
+Järgnevalt sättisime alalisvooluallika pinge $\textcolor[HTML]{ff00ff}{14 \cdot V}$ peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-3) leheküljel`r render_pageref("tab:current-characteristics-3")`.
+
+```{=latex}
+\onecolumn
+
+```
+
+```{r label = "current-characteristics-3", echo=FALSE}
 I_3 <- c(.15, .17, .19, .23, .26, .28, .32)
 U_3 <- c(8.83, 8.48, 8.08, 7.36, 6.75, 6.3, 5.4)
 
@@ -100,20 +137,30 @@ colnames(current_characteristics_3) <- c(
 
 print_table(
   table = current_characteristics_3,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul 14 volti."
+  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul \\textcolor[HTML]{ff00ff}{$14 \\cdot V$}."
 )
 
 ```
 
-Leheküljel $\pageref{fig:U-I}$ oleval joonisel \@ref(fig:U-I) on näha graafiliselt, kuidas reostaadi otste vahel olev pinge sõltub voolutugevusest alalisvooluallika kolme eri väljundpinge korral.
+```{=latex}
+\twocolumn
 
-```{r label = "U-I", fig.cap="Reostaadi otste vahel olev pinge ja voolutugevus sõltuvalt alalisvooluallika väljundpingest."}
-librarian::shelf(c(                                                                           # 1
-  "ggplot2",                                                                                  # 2
+```
+
+Leheküljel`r render_pageref("fig:U-I")` oleval joonisel \@ref(fig:U-I) on näha graafiliselt, kuidas reostaadi otste vahel olev pinge sõltub voolutugevusest alalisvooluallika kolme eri väljundpinge korral.
+
+```{=latex}
+\onecolumn
+
+```
+
+```{r label = "U-I", fig.cap="Reostaadi otste vahel olev pinge ja voolutugevus sõltuvalt alalisvooluallika väljundpingest: \\textcolor[HTML]{008000}{$10 \\cdot V$}, \\textcolor[HTML]{ff6600}{$12 \\cdot V$} ja \\textcolor[HTML]{ff00ff}{$14 \\cdot V$}."}
+librarian::shelf(c(
+  "ggplot2",
   "ggpmisc",
   "ggpubr",
-  "latex2exp"                                                                                 # 3
-))                                                                                            # 4
+  "latex2exp"
+))
 
 colnames(current_characteristics_1) <- c(
   "I_1",
@@ -135,38 +182,37 @@ model_1 = lm(formula = formula_1, data = current_characteristics_1)
 emf_1 <- model_1$coefficients[1]
 r_1 <- -model_1$coefficients[2]
 
-formula_2 = U_2 ~ I_2
-model_2 = lm(formula = formula_2, data = current_characteristics_2)
-emf_2 <- model_2$coefficients[1]
-r_2 <- -model_2$coefficients[2]
-
-formula_3 = U_3 ~ I_3
-model_3 = lm(formula = formula_3, data = current_characteristics_3)
-emf_3 <- model_3$coefficients[1]
-r_3 <- -model_3$coefficients[2]
-
-ggplot(data = current_characteristics_1) + geom_point(aes(x = I_1, y = U_1, colour = "10")) +                         # 6
+ggplot(data = current_characteristics_1) + geom_point(aes(x = I_1, y = U_1), color = "#008000", fill = "#008000", shape = 23, size = 3) +
   labs(x = TeX("$\\frac{\\textit{I}}{A}$"), y = TeX("$\\frac{\\textit{U}}{V}$")) +
-  geom_point(data = current_characteristics_2, aes(x = I_2, y = U_2, colour = "12")) +
-  geom_point(data = current_characteristics_3, aes(x = I_3, y = U_3, colour = "14")) +
-  guides(color = guide_legend(title = "Alalisvooluallika väljundpinge")) +
-  scale_color_discrete(labels = unname(TeX(c("$10 \\cdot V$", "$12 \\cdot V$", "$14 \\cdot V$")))) +
-  stat_regline_equation(mapping = aes(x = I_1, y = U_1, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "10"), label.y = 5) +
-  stat_regline_equation(aes(x = I_2, y = U_2, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "12"), label.y = 5.5) +
-  stat_regline_equation(aes(x = I_3, y = U_3, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "14"), label.x = .16, label.y = 8.6) +
-  stat_cor(aes(x = I_1, y = U_1, colour = "10"), label.y = 4.5) +
-  stat_cor(aes(x = I_2, y = U_2, colour = "12"), label.y = 6) +
-  stat_cor(aes(x = I_3, y = U_3, colour = "14"), label.x = .2, label.y = 8)
+  geom_point(data = current_characteristics_2, aes(x = I_2, y = U_2, colour = "12"), color = "#ff6600", fill = "#ff6600", shape = 23, size = 3) +
+  geom_point(data = current_characteristics_3, aes(x = I_3, y = U_3, colour = "14"), color = "#ff00ff", fill = "#ff00ff", shape = 23, size = 3) +
+  stat_regline_equation(mapping = aes(x = I_1, y = U_1, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "10"), color = "#008000", label.y = 5) +
+  stat_regline_equation(aes(x = I_2, y = U_2, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "12"), color = "#ff6600", label.y = 5.5) +
+  stat_regline_equation(aes(x = I_3, y = U_3, label = paste(..eq.label.., ..rr.label.., ..adj.rr.label.., sep = "~~~~"), colour = "14"), color = "#ff00ff", label.x = .16, label.y = 8.7) +
+  stat_cor(aes(x = I_1, y = U_1, colour = "10"), color = "#008000", label.y = 4.5) +
+  stat_cor(aes(x = I_2, y = U_2, colour = "12"), color = "#ff6600", label.y = 6) +
+  stat_cor(aes(x = I_3, y = U_3, colour = "14"), color = "#ff00ff", label.x = .2, label.y = 8)
 
 ```
 
-Sama elektromotoorjõu ja alalisvooluallika sisetakistuse korral teostatud eri takistustega elektrivoolu ja pinge mõõtmiste põhjal saab need samaks jäävad ehk konstantsed väärtused välja arvutada kasutades regressioonanalüüsi, sest välja paistab tugev oluline negatiivne seos ($R$ on igal kolmel tasemel väärtusega -1 ja $p \ll .05$) igal kolmel tasemel pinge ja elektrivoolu vahel. Lasin regressioonanalüüsi teostada automaatselt. Kui eeldada, et seosed kehtivad kõikvõimalike elektrivoolu ja pinge väärtuste korral, siis elektrivoolu puudumisel oleva väärtuse leiame joonisele märgitud võrrandite vabaliikmetest ja alalisvooluallika sisetakistuse nendesamade võrrandite ühe muutujaga üksliikmete kordajate vastandarvudest kasutades valemit \@ref(eq:V-klemm). 
+```{=latex}
+\twocolumn
+
+```
+
+Joonisel on näha, et elektrivool ja klemmipinge on omavahel pöördvõrdelises sõltuvuses. Kui algklemmilt voolab kogu laeng ühtlasi lõppklemmile, siis on nii alg- kui lõppklemmil ühesugune potentsiaal ja potentsiaalide erinevus on null. Kui algklemmilt ei voola üldse midagi ära, siis on alg- ja lõppklemmi potentsiaalide vahe maksimaalne. Seega, mida vähem elektrit voolab, seda suurem on vooluallika klemmipinge.
+
+Sama elektromotoorjõu ja alalisvooluallika sisetakistuse korral teostatud eri takistustega elektrivoolu ja pinge mõõtmiste põhjal saab need samaks jäävad ehk konstantsed väärtused välja arvutada kasutades regressioonanalüüsi, sest välja paistab tugev oluline negatiivne seos ($R$ on igal kolmel tasemel väärtusega -1 ja $p \ll .05$) igal kolmel tasemel pinge ja elektrivoolu vahel. Lasin regressioonanalüüsi teostada automaatselt. Kui eeldada, et seosed kehtivad kõikvõimalike elektrivoolu ja pinge väärtuste korral, siis elektrivoolu puudumisel oleva väärtuse leiame joonisele märgitud võrrandite vabaliikmetest ja alalisvooluallika sisetakistuse nendesamade võrrandite ühe muutujaga üksliikmete kordajate vastandarvudest kasutades valemit \@ref(eq:V-klemm) leheküljel`r render_pageref("eq:V-klemm")`. 
 
 Kuigi juhendis on kirjas, et kui kõik hästi läks, siis pidanuks elektromotoorjõud võrduma pingega vooluallika otstel lahtise vooluringe korral, kuid nii on see ainult kümnevoldise väljundpinge korral. Muudes juhtudes oli elektromotoorjõud väljundpingest väiksem. Järelikult mängis suurema väljundpinge korral rolli ühenduskohtade või juhtmete takistus või näitas osuti valesti.
 
 ## Vooluallika kasutegur
 
-Järgnevalt selgitasime välja vooluallika kasuteguri. Selleks sättisime alalisvooluallika väljundpinge taas kümnevoldiseks ning ühendasime vastavalt skeemile \@ref(fig:schema-with-additional-resistor) vooluringi lisatakisti (joonis \@ref(fig:with-r-l) leheküljel $\pageref{fig:with-r-l}$). Selgus, et kümnevoldise väljundpinge korral on elektromotoorjõud $`r signif(emf_1, digits = 3)` \times V$ ja sisetakistus $`r signif(r_1, digits = 3)` \times \Omega$.
+Järgnevalt selgitasime välja vooluallika kasuteguri.
+
+Juhendis on kirjas, et elektromotoorjõud tuleb arvutada nagu eelmises alapeatükis. Eelmises alapeatükis lasin selle arvutada regressioonanalüüsi kaudu kasutades voolu ja pinge väärtusi. Sedapuhku ei ole juhendis kirjas, et need väärtused pidanuksime uuesti mõõtma. Seega on alust arvata, et elektromotoorjõu väärtus oli juba välja selgitatud.
+
+Sättisime alalisvooluallika väljundpinge taas kümnevoldiseks ning ühendasime vastavalt skeemile \@ref(fig:schema-with-additional-resistor) leheküljel`r render_pageref("fig:schema-with-additional-resistor")` vooluringi lisatakisti (joonis \@ref(fig:with-r-l) leheküljel`r render_pageref("fig:with-r-l")`). Selgus, et $\textcolor[HTML]{008000}{10 \cdot V}$ väljundpinge korral on elektromotoorjõud $`r signif(emf_1, digits = 3)` \times V$ ja sisetakistus $`r signif(r_1, digits = 3)` \times \Omega$.
 
 ```{=tex}
 \begin{figure}
@@ -175,7 +221,7 @@ Järgnevalt selgitasime välja vooluallika kasuteguri. Selleks sättisime alalis
 	(0, 0)	to[dcvsource, l = $E$, v_ = $r$] (0, 2)
 			to[ammeter] (2, 2)
 			to[vR, l = $R$, *-*] (2, 0)
-			to[R, l = $r_L$] (0, 0)
+			to[R, l = $R_\mathrm{sisemine}$] (0, 0)
 	;
 	\draw
 		(2, 2)	to[voltmeter] (4, 2) -- (4, 0) -- (2, 0)
@@ -186,13 +232,17 @@ Järgnevalt selgitasime välja vooluallika kasuteguri. Selleks sättisime alalis
 
 ```
 
-
-```{r label = "with-r-l", fig.cap = "Vooluring lisatakistiga."}
+```{r label = "with-r-l", echo=FALSE, fig.cap = "Vooluring lisatakistiga."}
 include_external_graphics("rmd/vooluring-lisatakistiga.png")
 
 ```
 
-Jätkasime voolutugevuse ja reostaadi otstevahelise pinge mõõtmist lisatakistusega ning kandsime tulemused tabelisse \@ref(tab:eta-power) leheküljel $\pageref{tab:eta-power}$.
+Jätkasime voolutugevuse ja reostaadi otstevahelise pinge mõõtmist lisatakistusega ning kandsime tulemused tabelisse \@ref(tab:eta-power) leheküljel`r render_pageref("tab:eta-power")`.
+
+```{=latex}
+\onecolumn
+
+```
 
 ```{r label = "eta-power"}
 
@@ -231,9 +281,107 @@ print_table(
 )
 ```
 
-Kasulik võimsus on see töö, mis tehakse ajas väljaspool vooluallikat vastavalt valemile \@ref(eq:P) leheküljel $\pageref{eq:P}$. Sama valemi järgi saab arvutada koguvõimsust - tuleb ainult pinge asendada elektromotoorjõuga. Kui lahutada elektromotoorjõust pinge alalisvooluallika positiivse väljundi ja pimereostaadi väikese takistuse otsa klemmi vahel, saame sisepinge. Selle reostaadi takistuse saame arvutada valemi \@ref(eq:R) põhjal leheküljel $\pageref{eq:R}$. Sisemine elektritakistus on nüüd alalisvooluallika sisetakistuse ja lisatud takisti takistuse summa. Kuna vastavalt Ohmi seadusele (valem \@ref(eq:R)) on pinge ja takistus samas valemis ja üksteise suhtes võrdelises sõltuvuses ja voolutugevus on konstantne nii sees kui väljas, peaksid sisemise ja välimise takistuse ning sisemise ja välimise pinge suhted olema võrdsed.
+```{=latex}
+\twocolumn
 
-Joonisel \@ref(fig:eta-power-graph) on esitatud võimsuse ja kasuteguri sõltuvus voolutugevusest.
+```
+
+Kasulik võimsus on see töö, mis tehakse ajas väljaspool vooluallikat vastavalt valemile \@ref(eq:P) leheküljel`r render_pageref("eq:P")`. Sama valemi järgi saab arvutada koguvõimsust: tuleb ainult pinge asendada elektromotoorjõuga. Kui lahutada elektromotoorjõust pinge alalisvooluallika positiivse väljundi ja pimereostaadi väikese takistuse otsa klemmi vahel, saame sisepinge. Selle reostaadi takistuse saame arvutada valemi \@ref(eq:R) põhjal leheküljel`r render_pageref("eq:R")`. Sisemine elektritakistus on nüüd alalisvooluallika sisetakistuse ja lisatud takisti takistuse summa. Kuna vastavalt Ohmi seadusele (valem \@ref(eq:R) leheküljel`r render_pageref("eq:R")`) on pinge ja takistus samas valemis ja üksteise suhtes võrdelises sõltuvuses ja voolutugevus on konstantne nii sees kui väljas, peaksid sisemise ja välimise takistuse ning sisemise ja välimise pinge suhted olema võrdsed. Ometi need ei ole võrdsed.
+
+Funktsioonil on võimalik maksimum kohas, kus funktsiooni tuletise väärtus on null.
+
+```{r label = "derivative"}
+functionToUse = expression(I * U)
+
+librarian::shelf(c(
+  "Ryacas"
+))
+
+derivative = D(functionToUse, "I")
+
+```
+
+Kasuliku võimsuse tuletis voolutugevuse järgi on $`r derivative`$. Välispinge on null kohas, kus selle graafik lõikub rõhtsa teljega. Selles kohas on püstise graafiku väärtus null.
+
+```{r label = "I_at_maximal_P_1"}
+function_U <- paste(emf_1, " - ", r_1, " * i == 0", sep = "")
+I_at_maximal_P_1 = yac_str(y_rmvars(paste("Solve(", function_U, ", i)", sep = "")))
+number_of_I_at_maximal_P_1 <- eval(parse(text = I_at_maximal_P_1))
+
+```
+
+Kui pistame välispinge nullväärtuseks $y$'i asemele valemisse $y = `r signif(emf_1, digits = 4)` - `r signif(r_1, digits = 4)` \cdot x$ jooniselt \@ref(fig:U-I) leheküljel`r render_pageref("fig:U-I")` ja arvestame, et $x = I$, saame, et välispinge on null voolutugevuse $`r signif(number_of_I_at_maximal_P_1, digits = 3)` \times A$ puhul. Seega on maksimaalne kasulik võimsus vooluga $`r signif(number_of_I_at_maximal_P_1, digits = 3)` \times A$. Kuid kas on? Graafiku järgi küll ei ole. Kuskil on viga, miski on valesti, aga ei tea, mis... Hea küll, mõtisklesin tunnikese. Kritseldasin tahvile ja mõtisklesin veel. Jõudsin järeldusele, et minu senine arutluskäik kasuliku võimsuse maksimumkoha arvutamiseks osutus ebakorrektseks. Kasutasin nimelt Ohmi seaduse algvalemit ja selles on mul kaks muutujat, millest ma ühe meelevaldselt tembeldasin konstandiks. Nii ei tohi teha. Ei või minna loodusseadustega vastuollu. Tuli leida võimalus kasutada ühe sisendiga talitlust ja selleks sobib \@ref(eq:P-E-R) leheküljel`r render_pageref("eq:P-E-R")`. Lasen teostada uuesti tuletise arvutamise, sedapuhku õige talitlusega:
+
+```{r label = "derivative-of-P-E-R"}
+functionToUse = expression(E^2 * R / (R + R_s)^2)
+
+librarian::shelf(c(
+  "Ryacas"
+))
+
+derivative_of_P_E_R = D(functionToUse, "R")
+string_of_derivative_of_P_E_P <- deparse(derivative_of_P_E_R)
+
+```
+
+Kasuliku võimsuse tuletis voolutugevuse järgi on $`r string_of_derivative_of_P_E_P`$. Näeme, et lahend on liigselt keeruline ja lihtsustan selle käsitsi:
+
+```{=latex}
+\onecolumn
+
+```
+
+```{=latex}
+\begin{align}
+\frac{E^2}{(R + R_\mathrm{sisemine})^2} - \frac{E^2 \cdot R \cdot (2 \cdot (R + R_\mathrm{sisemine}))}{((R + R_\mathrm{sisemine})^2)^2} &= \\
+\frac{E^2}{(R + R_\mathrm{sisemine})^2} - \frac{E^2 \cdot R \cdot 2 \cdot (R + R_\mathrm{sisemine})}{(R + R_\mathrm{sisemine})^4} &= \\
+\frac{E^2}{(R + R_\mathrm{sisemine})^2} - \frac{2 \cdot R \cdot E^2}{(R + R_\mathrm{sisemine})^3} &= \\
+\frac{E^2 \cdot (R + R_\mathrm{sisemine}) - 2 \cdot R \cdot E^2}{(R + R_\mathrm{sisemine})^3} &= \\ \frac{E^2 \cdot (R_\mathrm{sisemine} - R)}{(R + R_\mathrm{sisemine})^3}
+(\#eq:simplified-derivative-of-P-E-R)
+\end{align}
+\twocolumn
+
+```
+
+Lihtsustatud avaldisest \@ref(eq:simplified-derivative-of-P-E-R) leheküljel`r render_pageref("eq:simplified-derivative-of-P-E-R")` on näha, et juhendis on viga: jaoturi astendaja peab olema 3, mitte 2. Lasen avaldise \@ref(eq:simplified-derivative-of-P-E-R) võrdsustada nulliga ja lahendada võrrandi võttes arvesse, et $R$ ja $R_\mathrm{sisemine}$ ei tohi olla vastandarvud:
+
+```{=latex}
+\begin{align}
+\frac{E^2 \cdot (R_\mathrm{sisemine} - R)}{(R + R_\mathrm{sisemine})^3} &== 0 \\
+R_\mathrm{sisemine} &= R (\#eq:extrema-of-P-E-R)
+\end{align}
+
+```
+
+Nagu lahendusest \@ref(eq:extrema-of-P-E-R) leheküljel`r render_pageref("eq:extrema-of-P-E-R")` nähtub on kasulik võimsus maksimaalne, kui välis- ja sisetakistus on võrdsed. Selleks, et tekitada kasuliku võimsuse valem sisetakistuse järgi, asendan välistakistuse valemis \@ref(eq:P-E-R) leheküljel`r render_pageref("eq:P-E-R")` sisetakistusega:
+
+```{=latex}
+\onecolumn
+```
+
+```{=latex}
+\begin{align}
+P_\mathrm{kasulik}(\mathrm{max}) := \frac{E^2 \cdot r}{(r + r)^2} = \frac{E^2 \cdot r}{(2 \cdot r)^2} = \frac{E^2 \cdot r}{4 \cdot r^2} = \frac{E^2}{4 \cdot r} (\#eq:useful-P)
+\end{align}
+\twocolumn
+
+```
+
+Vastavalt valemile \@ref(eq:useful-P) leheküljel`r render_pageref("eq:useful-P")` lasen arvutada maksimaalse võimsuse:
+
+```{r label = "useful-P-max"}
+P_useful_max <- emf_1^2 / (4 * r_s)
+
+```
+
+Kasuliku võimsuse maksimum on $`r signif(P_useful_max, digits = 3)` \times W$. Kui heita pilk tabelisse \@ref(tab:eta-power) leheküljel`r render_pageref("tab:eta-power")`, siis näeme, et maksimaalne kasulik võimsus on voolutugevuste $1.1 \times 10^{-1} \times A$ ja $1.2 \times 10^{-1} \times A$ vahel. Kasuliku võimsuse maksimum on takistuste $`r signif(r_s, digits = 3)` \times \Omega$ puhul. Seal peaks ka olema välis- ja sisetakistuse suhe 1.
+
+Joonisel \@ref(fig:eta-power-graph) leheküljel`r render_pageref("fig:eta-power-graph")` on esitatud võimsuse ja kasuteguri sõltuvus voolutugevusest.
+
+```{=latex}
+\onecolumn
+
+```
 
 ```{r label = "eta-power-graph", fig.cap= "Võimsuse ja kasuteguri sõltuvus voolutugevusest."}
 I_margin <- 1 / 100 * I + 2 / 100
@@ -242,28 +390,92 @@ N_1_margin <- sqrt(I_margin^2 + U_margin^2)
 emf_margin <- sqrt(U_margin^2 + r_1^2 * I_margin^2)
 eta_margin <- sqrt(U_margin^2 + emf_margin^2)
 
-ggplot(data = eta_power) + geom_point(aes(x = I, y = N_1, colour = "N_1")) +                         # 6
-  labs(x = TeX("$\\frac{\\textit{I}}{A}$"), y = TeX("$\\frac{\\textit{N}_1}{W}$")) +
-  geom_point(data = eta_power, aes(x = I, y = eta, colour = "eta_N")) +
+ggplot(data = eta_power) + geom_point(aes(x = I, y = N_1, colour = "#0000ff"), color = "#0000ff", fill = "#0000ff", shape = 24, size = 3) +
+  labs(x = TeX("$\\frac{\\textit{I}}{A}$"), y = TeX("$\\frac{\\textit{P}_1}{W}$"), ) +
+  geom_point(data = eta_power, aes(x = I, y = eta, colour = "#ff0000"), color = "#ff0000", fill = "#ff0000", shape = 25, size = 3) +
   scale_y_continuous(sec.axis = sec_axis(~., name = TeX("\\eta"))) +
   guides(color = guide_legend(title = "")) +
-  scale_color_discrete(labels = unname(TeX(c("$\\frac{\\textit{N}_1}{W}$", "$\\textit{eta}$")))) +
-  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = N_1, colour = "N_1")) +
-  geom_errorbar(aes(x = I, ymin = N_1 - N_1_margin, ymax = N_1 + N_1_margin, colour = "N_1")) +
-  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = eta, colour = "eta_N")) +
-  geom_errorbar(aes(x = I, ymin = eta - eta_margin, ymax = eta + eta_margin, colour = "eta_N"))
+  scale_color_manual(labels = unname(TeX(c("$\\frac{\\textit{P}_1}{W}$", "$\\textit{eta}$"))), values = c("$\\frac{\\textit{P}_1}{W}$" = "#0000ff", "$\\textit{eta}$" = "#ff0000")) +
+  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = N_1, colour = "#0000ff"), color = "#0000ff") +
+  geom_errorbar(aes(x = I, ymin = N_1 - N_1_margin, ymax = N_1 + N_1_margin, colour = "#0000ff"), color = "#0000ff") +
+  geom_errorbarh(aes(xmin = I - I_margin, xmax = I + I_margin, y = eta, colour = "eta_N"), color = "#ff0000") +
+  geom_errorbar(aes(x = I, ymin = eta - eta_margin, ymax = eta + eta_margin, colour = "eta_N"), color = "#ff0000") +
+  theme(axis.title.y = element_text(colour = "#0000ff"), axis.text.y = element_text(colour = "#0000ff"), axis.ticks.y = element_line(colour = "#0000ff"), axis.title.y.right = element_text(colour = "#ff0000"), axis.ticks.y.right = element_line(colour = "#ff0000"), axis.text.y.right = element_text(colour = "#ff0000"))
+
+```
+
+```{=latex}
+\twocolumn
+
+```
+
+Näeme jooniselt, et voolutugevuse suurenedes kasutegur väheneb. Võimsuse ja voolutugevuse vahel aga ei paista välja lineaarne seos. Jooniselt näeme, et sinise graafiku lõpus toimub langemine. Et selles veenduda, võime ka heita pilgu tabelisse \@ref(tab:eta-power) leheküljel`r render_pageref("tab:eta-power")` ning võrdleme kaht viimast rida. Kui oleksime rohkem mõõtmisi teostanud ehk veel suurema voolutugevusega, näeksime ilmselt selgemalt paraboolset sõltuvust. Seega on võimalik, et teatud voolutugevuse juures oli kasulik võimsus maksimaalne.
+
+Joonisel \@ref(fig:eta-power-resistancy-graph) leheküljel`r render_pageref("fig:eta-power-resistancy-graph")` on esitatud võimsuse ja kasuteguri sõltuvus takistuste suhtest.
+
+```{=latex}
+\onecolumn
 
 ```
 
 ```{r label = "eta-power-resistancy-graph", fig.cap= "Võimsuse ja kasuteguri sõltuvus välis- ja sisetakistuse suhtest."}
 
-ggplot(data = eta_power) + geom_point(aes(x = R_over_r_s, y = N_1, colour = "N_1")) +                         # 6
-  labs(x = TeX("$\\textit{\\frac{R}{r_s}}$"), y = TeX("$\\frac{\\textit{N}_1}{W}$")) +
-  geom_point(data = eta_power, aes(x = R_over_r_s, y = eta, colour = "eta_N")) +
+ggplot(data = eta_power) + geom_point(aes(x = R_over_r_s, y = N_1, colour = "N_1"), color = "#0000ff", fill = "#0000ff", shape = 24, size = 3) +
+  labs(x = TeX("$\\textit{\\frac{R}{r_s}}$"), y = TeX("$\\frac{\\textit{P}_1}{W}$")) +
+  geom_point(data = eta_power, aes(x = R_over_r_s, y = eta, colour = "eta_N"), color = "#ff0000", fill = "#ff0000", shape = 25, size = 3) +
   scale_y_continuous(sec.axis = sec_axis(~., name = TeX("\\eta"))) +
   guides(color = guide_legend(title = "")) +
-  scale_color_discrete(labels = unname(TeX(c("$\\frac{\\textit{N}_1}{W}$", "$\\textit{eta}$"))))
+  scale_color_manual(labels = unname(TeX(c("$\\frac{\\textit{P}_1}{W}$", "$\\textit{eta}$"))), values = c("$\\frac{\\textit{P}_1}{W}$" = "#0000ff", "$\\textit{eta}$" = "#ff0000")) +
+  theme(axis.title.y = element_text(colour = "#0000ff"), axis.text.y = element_text(colour = "#0000ff"), axis.ticks.y = element_line(colour = "#0000ff"), axis.title.y.right = element_text(colour = "#ff0000"), axis.ticks.y.right = element_line(colour = "#ff0000"), axis.text.y.right = element_text(colour = "#ff0000"))
 
 ```
 
+```{=latex}
+\twocolumn
 
+```
+
+Näeme jooniselt, et kasuliku võimsuse maksimum paistab tõesti olevat kohal, kus takistuste suhe on 1.
+
+Milline on aga lugu kasuteguriga? Kasutades valemit \@ref(eq:eta-R) leheküljel`r render_pageref("eq:eta-R")`, lasen arvutada kasuteguri tuletise:
+
+```{r label = "derivative-of-eta-R"}
+function_eta_R = expression(R / (R + R_s))
+
+librarian::shelf(c(
+  "Ryacas"
+))
+
+derivative_of_eta_R = D(function_eta_R, "R")
+string_of_derivative_of_eta_R <- deparse(derivative_of_eta_R)
+
+```
+
+Kasuteguri tuletis välitakistuse järgi on $`r string_of_derivative_of_eta_R`$. Näeme, et lahend on liigselt keeruline ja lihtsustan selle käsitsi:
+
+```{=latex}
+\onecolumn
+
+```
+
+```{=latex}
+\begin{align}
+\frac{1}{R + R_{sisemine}} - \frac{R}{(R + R_{sisemine})^2} = \frac{R_{sisemine}}{(R + R_{sisemine})^2}.
+(\#eq:d-of-eta-R)
+\end{align}
+\twocolumn
+
+```
+
+Ekstreemumkohtade leidmiseks võrdsustan kasuteguri tuletise \@ref(eq:d-of-eta-R) leheküljel`r render_pageref("eq:d-of-eta-R")` nulliga:
+
+```{=latex}
+\begin{align}
+\frac{R_{sisemine}}{(R + R_{sisemine})^2} &= 0, R \nequal R_{sisemine} (\#eq:extrema-of-eta-R-initial)\\ 
+R_{sisemine} &= 0
+(\#eq:extrema-of-eta-R)
+\end{align}
+
+```
+
+Võrrandi \@ref(eq:extrema-of-eta-R-initial) lahendamisel osutub, et kasuteguril on ekstreemum kohal, mille puhul sisetakistus on null. Kui sisetakistus läheneb nullile, on välis- ja sisetakistuse suhe lõputult suur, mis tähendab, et kasuteguri saab maksimeerida minimeerides sisetakistuse. Sarnaselt, kui arvutada kasuteguri tuletis sisetakistuse järgi, on tulemus selline, et kasutegur on minimaalne kohal, kus välistakistus puudub, mis on ka loogiline, sest kui tarbijat vooluvõrgus pole, ei saa ka tarbija kasu saada.

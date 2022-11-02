@@ -108,9 +108,9 @@ print_table <- function(table, caption, digits = 2, additional_header = NULL, fo
       table,
       bootstrap_options = c("striped", "bordered", "condensed", "responsive", "hover"),
       latex_options = c("striped", "repeat_header"),
-      # repeat_header_text = paste(caption, "$\\textit{(Jätkub...)}$"),
+      repeat_header_text = paste(caption, "$\\textit{(Jätkub...)}$"),
       repeat_header_method = "replace",
-      repeat_header_continued = TRUE # "Tabel järgneb järgmisel leheküljel..."
+      repeat_header_continued = "Tabel järgneb järgmisel leheküljel..."
     ))
     
     if (!is.null(footnotes)) {
@@ -177,6 +177,27 @@ render_font <- function(text, to_italic = TRUE) {
 render_with_emojis <- function(text) {
   return(paste("\\fontspec{Symbola}", text, "\\fontspec{DejaVu Serif}{}", sep = ""))
 }
+
+#' This function renders a reference to a page as it cannot be used in the web output.
+#' 
+#' @param reference the reference identifier
+#' 
+#' @returns the rendered page reference
+render_pageref <- function(reference) {
+  
+  if (knitr::is_html_output()) {
+    rendered_pageref <- ""
+  } else {
+    rendered_pageref <- paste(" $\\pageref{", reference, "}$", sep = "")
+  }
+
+  return(rendered_pageref)
+}
+
+```
+
+```{=latex}
+\twocolumn
 
 ```
 

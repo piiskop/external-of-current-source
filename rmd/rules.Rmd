@@ -84,6 +84,10 @@ mistõttu ühik on $\frac{m \cdot kg}{s^2}$ või lühemalt $N$.
 
 ## Elektromotoorjõud
 
+> Allikast tarnitud energia jagatud läbi allika transporditava laenguga.
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-51.)")`
+
 ```{=latex}
 \begin{align}
 E := \int{\frac{\vec{F}}{Q}} \cdot \mathrm{d}(s),(\#eq:emf) 
@@ -101,6 +105,26 @@ milles *Q* on elektrilaeng `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2
 ```
 
 `r render_with_emojis("((ref:haynes-2014-crc), p. 2-49; (ref:newell-sp), p. 31)")`, mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või lihtsamalt $\frac{m^2 \cdot kg}{C \cdot s^2}$ või lühemalt $\frac{m \cdot N}{C}$ või veel lühemalt $\frac{J}{C}$ või kõige lühemalt $V$ `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`.
+
+Avaldan valemist \@ref(eq:emf) jõu:
+
+```{=latex}
+\begin{align}
+\vec{F} := \frac{E \cdot Q}{\mathrm{d}(s)}.(\#eq:F-via-E-Q-s) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I \cdot T}{L} = \frac{L^2 \cdot M \cdot I \cdot T}{I \cdot T^3 \cdot L} = \frac{L \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-F-via-E-Q-s)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m \cdot kg}{s^2}$ ehk lihtsamalt $N$.
 
 ## Elektrivool
 
@@ -142,6 +166,26 @@ W := \int{\vec{F}} \cdot \mathrm{d}(s)(\#eq:W)
 
 mistõttu ühik on $\frac{m^2 \cdot kg}{s^2}$ või lühemalt $m \cdot N$ või kõige lühemalt $J$.
 
+Asendan valemisse \@ref(eq:W) jõu valemist \@ref(eq:F-via-E-Q-s) leheküljel`r render_pageref("eq:F-via-E-Q-s")`:
+
+```{=latex}
+\begin{align}
+W := \int{\overrightarrow{\frac{E \cdot Q}{\mathrm{d}(s)}}} \cdot \mathrm{d}(s) = E \cdot Q.(\#eq:W-via-E-Q) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I \cdot T = \frac{L^2 \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-W-via-E-Q)
+\end{align}
+```
+
+millest johtuvalt on ühik $\frac{m^2 \cdot kg}{s^2}$ ehk lühemalt $m \cdot N$ ehk kõige lühemalt $J$.
+
 ## Elektriline potentsiaal
 
 ```{=latex}
@@ -163,6 +207,8 @@ milles $W$ on töö `r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. D
 mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või kõige lühemalt $V$.
 
 ## Elektripotentsiaalide erinevus
+
+Elektripotentsiaalide erinevus on ühtlasi pingelang.
 
 ```{=latex}
 \begin{align}
@@ -222,7 +268,110 @@ U_\mathrm{klemm} := E - I \cdot R_\mathrm{sisemine},(\#eq:V-klemm)
 
 mistõttu ühik on $\frac{m^2 \cdot kg}{A \cdot s^3}$ või kõige lühemalt $V$.
 
-## Elektri energia
+Kirjutades valemis \@ref(eq:V-klemm) klemmipinge lahti kasutades valemit \@ref(eq:R), saab avaldada voolutugevuse takistuste ja elektromotoorjõu kaudu:
+
+```{=latex}
+\begin{align}
+I \cdot R &= E - I \cdot R_\mathrm{sisemine}\\
+I \cdot R + I \cdot R_\mathrm{sisemine} &= E\\
+I \cdot (R + R_\mathrm{sisemine}) &= E\\
+I :&= \frac{E}{R + R_\mathrm{sisemine}}.(\#eq:I-E-R) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{I \cdot T^3}}{\frac{L^2 \cdot M}{T^3 \cdot I^2}} = I},
+(\#eq:dimensional-analysis-for-I-E-R)
+\end{align}
+```
+
+mistõttu ühik on $A$.
+
+## Võimsus
+
+```{=latex}
+\begin{align}
+P := \frac{\mathrm{d}(W)}{\mathrm{d}(t)}(\#eq:P-via-W-t) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:haynes-2014-crc), p. 2-2)")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^2}}{T} = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-via-W-t)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^3} = \frac{N \cdot m}{s} = \frac{J}{s} = W$.
+
+Asendan valemisse \@ref(eq:P-via-W-t) töö valemist \@ref(eq:W-via-E-Q) leheküljel`r render_pageref("eq:W-via-E-Q")`:
+
+```{=latex}
+\begin{align}
+P := \frac{\mathrm{d}(E \cdot Q)}{\mathrm{d}(t)}.(\#eq:P-via-E-Q-t) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I \cdot T}{T} = \frac{L^2 \cdot M \cdot I \cdot T}{I \cdot T^3 \cdot T} = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-via-E-Q-t)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^3} = \frac{N \cdot m}{s} = \frac{J}{s} = W$.
+
+Asendan valemisse \@ref(eq:P-via-E-Q-t) voolutugevuse valemist \@ref(eq:I) leheküljel`r render_pageref("eq:I")`:
+
+```{=latex}
+\begin{align}
+P := E \cdot I.(\#eq:P-via-E-I) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-via-E-I)
+\end{align}
+```
+
+millest johtuvalt on ühik $\frac{m^2 \cdot kg}{s^3} = \frac{N \cdot m}{s} = \frac{J}{s} = W$.
+
+Asendan valemisse \@ref(eq:P-via-E-I) voolutugevuse valemist \@ref(eq:I-E-R) leheküljel`r render_pageref("eq:I-E-R")`:
+
+```{=latex}
+\begin{align}
+P := E \cdot \frac{E}{R + R_\mathrm{sisemine}} = \frac{E^2}{R + R_\mathrm{sisemine}}. (\#eq:P-via-E-R)
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{(\frac{L^2 \cdot M}{I \cdot T^3})^2}{\frac{L^2 \cdot M}{T^3 \cdot I^2}} = \frac{L^4 \cdot M^2 \cdot T^3 \cdot I^2}{I^2 \cdot T^6 \cdot L^2 \cdot M} = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-via-E-R)
+\end{align}
+```
+
+millest johtuvalt on ühik $\frac{m^2 \cdot kg}{s^3} = \frac{N \cdot m}{s} = \frac{J}{s} = W$.
+
+Elektri energia tarbija jaoks ehk kasulik võimsus:
 
 ```{=latex}
 \begin{align}
@@ -241,3 +390,86 @@ P := U \cdot I (\#eq:P)
 ```
 
 mistõttu ühik on $\frac{m^2 \cdot kg}{s^3}$ või lühemalt $\frac{m \cdot N}{s}$ või kõige lühemalt $W$.
+
+Asendades valemisse \@ref(eq:P) pinge valemist \@ref(eq:R) leheküljel`r render_pageref("eq:R")`, on elektri energia avaldatav takistuse ja voolutugevuse kaudu:
+
+```{=latex}
+\begin{align}
+P := U \cdot I = (I \cdot R) \cdot I = I^2 \cdot R. (\#eq:P-I-R) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{I^2 \cdot \frac{L^2 \cdot M}{T^3 \cdot I^2} = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-I-R)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^3}$ või lühemalt $\frac{m \cdot N}{s}$ või kõige lühemalt $W$.
+
+Asendades valemis \@ref(eq:P-I-R) elektrivoolu valemist \@ref(eq:I-E-R) leheküljel`r render_pageref("eq:I-E-R")`, saab avaldada elektri energia voolutugevuse, takistuste ja elektromotoorjõu kaudu:
+
+```{=latex}
+\begin{align}
+P := (\frac{E}{R + R_\mathrm{sisemine}})^2 \cdot R = \frac{E^2 \cdot R}{(R + R_\mathrm{sisemine})^2}. (\#eq:P-E-R) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{(\frac{L^2 \cdot M}{T^3 \cdot I})^2 \cdot \frac{L^2 \cdot M}{T^3 \cdot I^2}}{(\frac{L^2 \cdot M}{T^3 \cdot I^2})^2} = \frac{(\frac{L^2 \cdot M}{T^3 \cdot I})^2}{\frac{L^2 \cdot M}{T^3 \cdot I^2}} = \frac{L^2 \cdot M}{T^3}},
+(\#eq:dimensional-analysis-for-P-E-R)
+\end{align}
+```
+
+mistõttu ühik on $\frac{m^2 \cdot kg}{s^3}$ või lühemalt $\frac{m \cdot N}{s}$ või kõige lühemalt $W$.
+
+## Vooluallika kasutegur
+
+Vooluallika kasutegur
+: vooluallika kasuliku ja koguvõimsuse suhe.
+
+```{=latex}
+\begin{align}
+\eta := \frac{P_\mathrm{kasulik}}{P} (\#eq:eta) 
+\end{align}
+
+```
+
+`r render_with_emojis("((ref:cleverlysmartcom-2022-physics))")`. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^3}}{\frac{L^2 \cdot M}{T^3}} = 1},
+(\#eq:dimensional-analysis-for-eta)
+\end{align}
+```
+
+mistõttu ühik on 1.
+
+Asendan valemisse \@ref(eq:eta) kasuliku võimsuse valemist \@ref(eq:P-E-R) leheküljel`r render_pageref("eq:P-E-R")` ja koguvõimsuse valemist \@ref(eq:P-via-E-R) leheküljel`r render_pageref("eq:P-via-E-R")`:
+
+```{=latex}
+\begin{align}
+\eta := \frac{\frac{E^2 \cdot R}{(R + R_\mathrm{sisemine})^2}}{\frac{E^2}{R + R_\mathrm{sisemine}}} = \frac{R}{R + R_\mathrm{sisemine}}. (\#eq:eta-R) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^3 \cdot I^2}}{\frac{L^2 \cdot M}{T^3 \cdot I^2}} = 1},
+(\#eq:dimensional-analysis-for-eta-R)
+\end{align}
+```
+
+mistõttu ühik on 1.

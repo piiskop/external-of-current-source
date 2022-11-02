@@ -2,54 +2,54 @@
 
 ## Alalisvooluallikas
 
-Kasutasime alalisvooluallikat *PS1502A*, mille eestvaade on näha joonisel \@ref(fig:dc-source-front) leheküljel $\pageref{fig:dc-source-front}$ ja tagantvaade joonisel \@ref(fig:dc-source-rear) leheküljel $\pageref{fig:dc-source-rear}$.
+Kasutasime alalisvooluallikat *PS1502A*, mille eestvaade on näha joonisel \@ref(fig:dc-source-front) leheküljel`r render_pageref("fig:dc-source-front")` ja tagantvaade joonisel \@ref(fig:dc-source-rear) leheküljel`r render_pageref("fig:dc-source-rear")`.
 
-```{r label = "dc-source-front", fig.cap = "Alalisvooluallikas eestvaates: juhtmed sisestatakse vastavalt polaarsusele vasakule, keskel on pinge reguleerimise nupp, paremal sisse-välja-lülitamise nupp."}
+```{r label = "dc-source-front", echo=FALSE, fig.cap = "Alalisvooluallikas eestvaates: juhtmed sisestatakse vastavalt polaarsusele vasakule, keskel on pinge reguleerimise nupp, paremal sisse-välja-lülitamise nupp."}
 include_external_graphics("rmd/alalisvooluallikas-eest.png")
 
 ```
 
-```{r label = "dc-source-rear", fig.cap = "Alalisvooluallika näidikud tagaküljel."}
+```{r label = "dc-source-rear", echo=FALSE, fig.cap = "Alalisvooluallika näidikud tagaküljel."}
 include_external_graphics("rmd/alalisvooluallikas-50-hz-220-v-1-a.png")
 
 ```
 
 ## Multimeetrid
 
-Pinge mõõtmiseks kasutasime multimeetrit *DVM831*, mille eestvaade on näha joonisel \@ref(fig:voltmeter-front) leheküljel $\pageref{fig:voltmeter-front}$ ja tagantvaade joonisel \@ref(fig:voltmeter-rear) leheküljel $\pageref{fig:voltmeter-rear}$.
+Pinge mõõtmiseks kasutasime multimeetrit *DVM831*, mille eestvaade on näha joonisel \@ref(fig:voltmeter-front) leheküljel`r render_pageref("fig:voltmeter-front")` ja tagantvaade joonisel \@ref(fig:voltmeter-rear) leheküljel`r render_pageref("fig:voltmeter-rear")`. Selle aparaadi mõõtetäpsus olevat piirkonna $20 \cdot V$ kohta $10^{-3} \cdot V$ ning mõõtemääramatus olevat $±0.8\%$ näidust, lisaks $±2$ numbrit kõige täpsemal positsioonil `r render_with_emojis("((ref:a3), p. 12)")`.
 
-```{r label = "voltmeter-front", fig.cap = "Multimeeter, millega mõõtsime reostaadi pinget, eestvaates.", out.height="96%"}
+```{r label = "voltmeter-front", echo=FALSE, fig.cap = "Multimeeter, millega mõõtsime reostaadi pinget, eestvaates.", out.height="96%"}
 include_external_graphics("rmd/voltmeeter.png")
 
 ```
 
-```{r label = "voltmeter-rear", fig.cap = "Multimeeter, millega mõõtsime reostaadi pinget, tagantvaates.", out.height="96%"}
+```{r label = "voltmeter-rear", echo=FALSE, fig.cap = "Multimeeter, millega mõõtsime reostaadi pinget, tagantvaates.", out.height="96%"}
 include_external_graphics("rmd/voltmeeter-tagantvaates.png")
 
 ```
 
-Elektrivoolu mõõtmiseks kasutasime multimeetrit *UT33C*, mille eestvaade on näha joonisel \@ref(fig:ampermeter-front) leheküljel $\pageref{fig:ampermeter-front}$ ja tagantvaade joonisel \@ref(fig:ampermeter-rear) leheküljel $\pageref{fig:ampermeter-rear}$.
+Elektrivoolu mõõtmiseks kasutasime multimeetrit *UT33C*, mille eestvaade on näha joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref("fig:ampermeter-front")` ja tagantvaade joonisel \@ref(fig:ampermeter-rear) leheküljel`r render_pageref("fig:ampermeter-rear")`. Selle aparaadi mõõtetäpsus oelvat $1\% + 2$ `r render_with_emojis("((ref:unit))")`.
 
-```{r label = "ampermeter-front", fig.cap = "Multimeeter, millega mõõtsime voolutugevust, eestvaates.", out.height="96%"}
+```{r label = "ampermeter-front", echo=FALSE, fig.cap = "Multimeeter, millega mõõtsime voolutugevust, eestvaates.", out.height="96%"}
 include_external_graphics("rmd/ampermeeter.png")
 
 ```
 
-```{r label = "ampermeter-rear", fig.cap = "Multimeeter, millega mõõtsime voolutugevust, tagantvaates.", out.height="96%"}
+```{r label = "ampermeter-rear", echo=FALSE, fig.cap = "Multimeeter, millega mõõtsime voolutugevust, tagantvaates.", out.height="96%"}
 include_external_graphics("rmd/ampermeeter-tagantvaates.png")
 
 ```
 
 ## Takistid
 
-Muudetava takistusega seadmena kasutasime reostaate *РПШ-2* (joonis \@ref(fig:rheostat-side) leheküljel $\pageref{fig:rheostat-side}$) ja *MC2* (joonis \@ref(fig:r-l) leheküljel $\pageref{fig:r-l}$).
+Muudetava takistusega seadmena kasutasime reostaate *РПШ-2* (joonis \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")`) ja *MC2* (joonis \@ref(fig:r-l) leheküljel`r render_pageref("fig:r-l")`).
 
-```{r label = "rheostat-side", fig.cap = "Reostaat *РПШ-2* külgvaates."}
+```{r label = "rheostat-side", echo=FALSE, fig.cap = "Reostaat *РПШ-2* külgvaates."}
 include_external_graphics("rmd/reostaat-külg.png")
 
 ```
 
-```{r label = "r-l", fig.cap = "Nelja suurusega takisti *MC2*."}
+```{r label = "r-l", echo=FALSE, fig.cap = "Nelja suurusega takisti *MC2*."}
 include_external_graphics("rmd/mc2.png")
 
 ```
