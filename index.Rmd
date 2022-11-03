@@ -7,6 +7,7 @@ date: "`r Sys.Date()`"
 description: "Tallinna Ülikooli elektromagnetismi praktikumi \"Vooluallika väliskarakteristiku leidmine\" peacecop kalmeri: raport"
 lang: et
 title: "Vooluallika väliskarakteristiku leidmine"
+subtitle: "Neljas laboratoorne töö elektromagnetismis"
 
 documentclass: book
 papersize: a4
@@ -192,6 +193,23 @@ render_pageref <- function(reference) {
   }
 
   return(rendered_pageref)
+}
+
+#' This function colors text.
+#' 
+#' @param color the color code in hexadecimals
+#' @param text the text to be colored
+#' 
+#' @returns the colored text
+render_color <- function(color, text) {
+  
+  if (knitr::is_html_output()) {
+    rendered_color <- paste("$\\color{#", color, "}{", text, "}$", sep = "")
+  } else {
+    rendered_color <- paste("$\\textcolor[HTML]{", color, "}{", text, "}$", sep = "")
+  }
+
+  return(rendered_color)
 }
 
 ```

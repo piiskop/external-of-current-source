@@ -6,7 +6,15 @@ Praktilise osa ilma analüüsita teostasin koos Kristo Markus Soikaga.
 
 ## Elektromotoorjõud ja sisetakistus
 
-Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref("fig:ampermeter-front")`), teise pinge (joonisel \@ref(fig:voltmeter-front) leheküljel`r render_pageref("fig:voltmeter-front")`) mõõtmiseks ja skaalata reostaadi (külgvaatega joonisel \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")`) vastavalt skeemile joonisel \@ref(fig:schema) leheküljel`r render_pageref("fig:schema")`. Läbipõlemise vältimiseks paigutasime reostaadi nihuti keskele, kuna meile polnud teada, kumba otsa nihutatuna oleks tegemist minimaalse ja kumba maksimaalse takistusega. Juhendis oli küll kirjas, et kahe klemmiga otsas on takistus maksimaalne, ent kindlam on ise järele kontrollida. Lahtiühendatud maandusklemmiga lülitasime vooluallika (joonis \@ref(fig:dc-source-front) leheküljel`r render_pageref("fig:dc-source-front")`) sisse, seadistasime $\textcolor[HTML]{008000}{10 \cdot V}$ peale (joonis \@ref(fig:output-10-v-open) leheküljel`r render_pageref("fig:output-10-v-open")`), lülitasime vooluallika välja, ühendasime maandusklemmi külge tagasi, lülitasime vooluallika sisse (joonis \@ref(fig:output-10-v-closed) leheküljel`r render_pageref("fig:output-10-v-closed")`).
+```{r label = "colors"}
+color_10_V = "008000"
+color_12_V = "ff6600"
+color_14_V = "ff00ff"
+
+```
+
+
+Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref("fig:ampermeter-front")`), teise pinge (joonisel \@ref(fig:voltmeter-front) leheküljel`r render_pageref("fig:voltmeter-front")`) mõõtmiseks ja skaalata reostaadi (külgvaatega joonisel \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")`) vastavalt skeemile joonisel \@ref(fig:schema) leheküljel`r render_pageref("fig:schema")`. Läbipõlemise vältimiseks paigutasime reostaadi nihuti keskele, kuna meile polnud teada, kumba otsa nihutatuna oleks tegemist minimaalse ja kumba maksimaalse takistusega. Juhendis oli küll kirjas, et kahe klemmiga otsas on takistus maksimaalne, ent kindlam on ise järele kontrollida. Lahtiühendatud maandusklemmiga lülitasime vooluallika (joonis \@ref(fig:dc-source-front) leheküljel`r render_pageref("fig:dc-source-front")`) sisse, seadistasime `r render_color(color = color_10_V, text = "10 \\cdot V")` peale (joonis \@ref(fig:output-10-v-open) leheküljel`r render_pageref("fig:output-10-v-open")`), lülitasime vooluallika välja, ühendasime maandusklemmi külge tagasi, lülitasime vooluallika sisse (joonis \@ref(fig:output-10-v-closed) leheküljel`r render_pageref("fig:output-10-v-closed")`).
 
 ```{=latex}
 \begin{figure}
@@ -30,7 +38,7 @@ Paigutasime vooluringesse kaks multimeetrit, millest ühe voolutugevuse (joonise
 
 ```
 
-```{r label = "output-10-v-open", echo=FALSE, fig.cap = "Seadistasime alalisvooluallika \\textcolor[HTML]{008000}{$10 \\cdot V$} peale. Näeme, et voolu pole, sest miinusklemm on lahti ühendatud."}
+```{r label = "output-10-v-open", echo=FALSE, fig.cap = paste("Seadistasime alalisvooluallika ", render_color(color = color_10_V, text = "10 \\cdot V"), " peale. Näeme, et voolu pole, sest miinusklemm on lahti ühendatud.", sep = "")}
 include_external_graphics("rmd/10-v-lahti.jpg")
 
 ```
@@ -77,7 +85,7 @@ colnames(current_characteristics_1) <- c(
 
 print_table(
   table = current_characteristics_1,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused alalisvooluallika voltmeetri näidul \\textcolor[HTML]{008000}{$10 \\cdot V$}."
+  caption = paste("Pinge-voolu mõõtekarakteristiku tulemused alalisvooluallika voltmeetri näidul ", render_color(color = color_10_V, text = "10 \\cdot V"), ".", sep = "")
 )
 
 ```
@@ -87,7 +95,7 @@ print_table(
 
 ```
 
-Järgnevalt sättisime alalisvooluallika pinge $\textcolor[HTML]{ff6600}{12 \cdot V}$ peale ja kordasime vaatlusi nagu $\textcolor[HTML]{008000}{10 \cdot V}$ korral kandes tulemused tabelisse \@ref(tab:current-characteristics-2) leheküljel`r render_pageref("tab:current-characteristics-2")`.
+Järgnevalt sättisime alalisvooluallika pinge `r render_color(color = color_12_V, text = "12 \\cdot V")` peale ja kordasime vaatlusi nagu `r render_color(color = color_10_V, text = "10 \\cdot V")` korral kandes tulemused tabelisse \@ref(tab:current-characteristics-2) leheküljel`r render_pageref("tab:current-characteristics-2")`.
 
 ```{=latex}
 \onecolumn
@@ -107,7 +115,7 @@ colnames(current_characteristics_2) <- c(
 
 print_table(
   table = current_characteristics_2,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul \\textcolor[HTML]{ff6600}{$12 \\cdot V$}."
+  caption = paste("Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul ", render_color(color = color_12_V, text = "12 \\cdot V"), ".", sep = "")
 )
 
 ```
@@ -117,7 +125,7 @@ print_table(
 
 ```
 
-Järgnevalt sättisime alalisvooluallika pinge $\textcolor[HTML]{ff00ff}{14 \cdot V}$ peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-3) leheküljel`r render_pageref("tab:current-characteristics-3")`.
+Järgnevalt sättisime alalisvooluallika pinge `r render_color(color = color_14_V, text = "14 \\cdot V")` peale ja kordasime vaatlusi nagu kümne voldi korral kandes tulemused tabelisse \@ref(tab:current-characteristics-3) leheküljel`r render_pageref("tab:current-characteristics-3")`.
 
 ```{=latex}
 \onecolumn
@@ -137,7 +145,7 @@ colnames(current_characteristics_3) <- c(
 
 print_table(
   table = current_characteristics_3,
-  caption = "Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul \\textcolor[HTML]{ff00ff}{$14 \\cdot V$}."
+  caption = paste("Pinge-voolu mõõtekarakteristiku tulemused voltmeetri algnäidul ", render_color(color = color_14_V, text = "14 \\cdot V"), ".", sep = "")
 )
 
 ```
@@ -154,7 +162,7 @@ Leheküljel`r render_pageref("fig:U-I")` oleval joonisel \@ref(fig:U-I) on näha
 
 ```
 
-```{r label = "U-I", fig.cap="Reostaadi otste vahel olev pinge ja voolutugevus sõltuvalt alalisvooluallika väljundpingest: \\textcolor[HTML]{008000}{$10 \\cdot V$}, \\textcolor[HTML]{ff6600}{$12 \\cdot V$} ja \\textcolor[HTML]{ff00ff}{$14 \\cdot V$}."}
+```{r label = "U-I", fig.cap=paste("Reostaadi otste vahel olev pinge ja voolutugevus sõltuvalt alalisvooluallika väljundpingest: ", render_color(color_10_V, text = "10 \\cdot V"), ", ", render_color(color = color_12_V, text = "12 \\cdot V"), " ja ", render_color(color = color_14_V, text = "14 \\cdot V"), ".", sep = "")}
 librarian::shelf(c(
   "ggplot2",
   "ggpmisc",
@@ -212,7 +220,7 @@ Järgnevalt selgitasime välja vooluallika kasuteguri.
 
 Juhendis on kirjas, et elektromotoorjõud tuleb arvutada nagu eelmises alapeatükis. Eelmises alapeatükis lasin selle arvutada regressioonanalüüsi kaudu kasutades voolu ja pinge väärtusi. Sedapuhku ei ole juhendis kirjas, et need väärtused pidanuksime uuesti mõõtma. Seega on alust arvata, et elektromotoorjõu väärtus oli juba välja selgitatud.
 
-Sättisime alalisvooluallika väljundpinge taas kümnevoldiseks ning ühendasime vastavalt skeemile \@ref(fig:schema-with-additional-resistor) leheküljel`r render_pageref("fig:schema-with-additional-resistor")` vooluringi lisatakisti (joonis \@ref(fig:with-r-l) leheküljel`r render_pageref("fig:with-r-l")`). Selgus, et $\textcolor[HTML]{008000}{10 \cdot V}$ väljundpinge korral on elektromotoorjõud $`r signif(emf_1, digits = 3)` \times V$ ja sisetakistus $`r signif(r_1, digits = 3)` \times \Omega$.
+Sättisime alalisvooluallika väljundpinge taas `r render_color(color = color_10_V, text = "10 \\cdot V")` ning ühendasime vastavalt skeemile \@ref(fig:schema-with-additional-resistor) leheküljel`r render_pageref("fig:schema-with-additional-resistor")` vooluringi lisatakisti (joonis \@ref(fig:with-r-l) leheküljel`r render_pageref("fig:with-r-l")`). Selgus, et `r render_color(color = color_10_V, text = "10 \\cdot V")` väljundpinge korral on elektromotoorjõud $`r signif(emf_1, digits = 3)` \times V$ ja sisetakistus $`r signif(r_1, digits = 3)` \times \Omega$.
 
 ```{=tex}
 \begin{figure}
