@@ -28,10 +28,25 @@ include_external_graphics("rmd/voltmeeter-tagantvaates.png")
 
 ```
 
-Elektrivoolu mõõtmiseks kasutasime multimeetrit *UT33C*, mille eestvaade on näha joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref("fig:ampermeter-front")` ja tagantvaade joonisel \@ref(fig:ampermeter-rear) leheküljel`r render_pageref("fig:ampermeter-rear")`. Selle aparaadi mõõtetäpsus oelvat $1\% + 2$ `r render_with_emojis("((ref:unit))")`.
+Elektrivoolu mõõtmiseks kasutasime multimeetrit *UT33C*, mille eestvaade on näha joonisel \@ref(fig:ampermeter-front) leheküljel`r render_pageref(reference = "fig:ampermeter-front")`, sisendid joonisel \@ref(fig:ampermeter-input) leheküljel `r render_pageref(reference = "fig:ampermeter-input")` ja tagantvaade joonisel \@ref(fig:ampermeter-rear) leheküljel`r render_pageref(reference = "fig:ampermeter-rear")`. Selle aparaadi mõõtetäpsus oelvat $1\% + 2$ `r render_with_emojis("((ref:unit))")`.
 
 ```{r label = "ampermeter-front", echo=FALSE, fig.cap = "Multimeeter, millega mõõtsime voolutugevust, eestvaates.", out.height="96%"}
-include_external_graphics("rmd/ampermeeter.png")
+include_external_graphics("rmd/ampermeeter.jpg")
+
+```
+
+```{=latex}
+\onecolumn
+
+```
+
+```{r label = "ampermeter-input", echo=FALSE, fig.cap = "Multimeetri *UT33C* sisendid.", out.height="96%"}
+include_external_graphics("rmd/ampermeeter-alumine.jpg")
+
+```
+
+```{=latex}
+\twocolumn
 
 ```
 
@@ -42,10 +57,15 @@ include_external_graphics("rmd/ampermeeter-tagantvaates.png")
 
 ## Takistid
 
-Muudetava takistusega seadmena kasutasime reostaate *РПШ-2* (joonis \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")`) ja *MC2* (joonis \@ref(fig:r-l) leheküljel`r render_pageref("fig:r-l")`).
+Muudetava takistusega seadmena kasutasime reostaate *РПШ-2* (joonised \@ref(fig:rheostat-side) leheküljel`r render_pageref("fig:rheostat-side")` ja \@ref(fig:rheostat-side-label) leheküljel`r render_pageref(reference = "fig:rheostat-side-label")`) ja *MC2* (joonis \@ref(fig:r-l) leheküljel`r render_pageref(reference = "fig:r-l")`).
 
 ```{r label = "rheostat-side", echo=FALSE, fig.cap = "Reostaat *РПШ-2* külgvaates."}
-include_external_graphics("rmd/reostaat-külg.png")
+include_external_graphics("rmd/reostaat-side.jpg")
+
+```
+
+```{r label = "rheostat-side-label", echo=FALSE, fig.cap = "Reostaadi *РПШ-2* silt."}
+include_external_graphics("rmd/reostaat-side-label.jpg")
 
 ```
 
